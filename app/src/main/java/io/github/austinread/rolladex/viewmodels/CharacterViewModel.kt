@@ -18,7 +18,11 @@ class CharacterViewModel(app: Application): AndroidViewModel(app) {
         characters = repo.allCharacters
     }
 
-    fun insert(character: CharacterSheet) = viewModelScope.launch(Dispatchers.IO) {
+    fun add(character: CharacterSheet) = viewModelScope.launch(Dispatchers.IO) {
         repo.add(character)
+    }
+
+    fun delete(id: Long) = viewModelScope.launch(Dispatchers.IO) {
+        repo.delete(id)
     }
 }

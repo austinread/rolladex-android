@@ -4,7 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
+import android.util.Log
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -38,6 +38,12 @@ class MainActivity : AppCompatActivity(), CharacterAdapter.CharacterClickListene
         }
     }
 
+    override fun onStart() {
+        super.onStart()
+
+        handleDelete()
+    }
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
@@ -45,7 +51,7 @@ class MainActivity : AppCompatActivity(), CharacterAdapter.CharacterClickListene
             data?.getStringExtra(NewCharacterActivity.EXTRA_REPLY)?.let {
                 val character = CharacterSheet(id = null, Name = it)
 
-                characterVM.insert(character)
+                characterVM.add(character)
             }
         }
         //TODO: Error Handling
@@ -53,11 +59,18 @@ class MainActivity : AppCompatActivity(), CharacterAdapter.CharacterClickListene
 
     override fun onCharacterClicked(id: Long?) {
         val intent = Intent(this@MainActivity, CharacterSheetActivity::class.java)
-        intent.putExtra(EXTRA_CHARACTER_ID, id)
+        intent.putExtra(EXTRA_VIEW_CHARACTER_ID, id)
         startActivity(intent)
     }
 
+    private fun handleDelete(){
+        val deletedId = intent.getLongExtra(CharacterSheetActivity.EXTRA_DELETE_CHARACTER_ID, -1)
+        if (deletedId != (-1).toLong()){
+            characterVM.delete(deletedId)
+        }
+    }
+
     companion object{
-        const val EXTRA_CHARACTER_ID = "VIEW_CHARACTER_ID"
+        const val EXTRA_VIEW_CHARACTER_ID = "VIEW_CHARACTER_ID"
     }
 }

@@ -18,6 +18,6 @@ interface CharacterDao {
     @Update(onConflict = OnConflictStrategy.REPLACE)
     suspend fun update(characterSheet: CharacterSheet)
 
-    @Delete
-    suspend fun delete(characterSheet: CharacterSheet)
+    @Query("DELETE FROM character WHERE id = :id")
+    suspend fun delete(id: Long)
 }

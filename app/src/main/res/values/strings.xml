@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">RollaDex</string>
     <string name="save_character">Save</string>
+    <string name="delete_character">Delete Character</string>
 </resources>

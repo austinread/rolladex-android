@@ -14,4 +14,8 @@ class CharacterRepository(private val characterDao: CharacterDao) {
     fun getById(id: Long): LiveData<CharacterSheet> {
         return characterDao.getById(id)
     }
+
+    suspend fun delete(id: Long) {
+        characterDao.delete(id)
+    }
 }
