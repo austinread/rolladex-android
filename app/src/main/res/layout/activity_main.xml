@@ -19,6 +19,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="16dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_add_box_light"
+        app:rippleColor="@color/colorPrimary"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
