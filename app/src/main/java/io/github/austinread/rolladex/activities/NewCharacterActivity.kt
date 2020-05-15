@@ -15,8 +15,11 @@ class NewCharacterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_character)
 
+        //TODO: View/Data Binding?
         val editCharacterName = findViewById<EditText>(R.id.et_characterName)
         val editCharacterLevel = findViewById<EditText>(R.id.et_characterLevel)
+        val editCharacterRace = findViewById<EditText>(R.id.et_characterRace)
+        val editCharacterClass = findViewById<EditText>(R.id.et_characterClass)
         val saveButton = findViewById<Button>(R.id.button_saveCharacter)
 
         saveButton.setOnClickListener{
@@ -26,8 +29,10 @@ class NewCharacterActivity : AppCompatActivity() {
             } else{
                 val name = editCharacterName.text.toString()
                 val level = editCharacterLevel.text.toString().toInt()
+                val race = editCharacterRace.text.toString()
+                val cClass = editCharacterClass.text.toString()
 
-                val newCharacter = CharacterSheet(null, name, level)
+                val newCharacter = CharacterSheet(null, name, level, race, cClass)
                 val bundle = Bundle()
                 bundle.putParcelable(EXTRA_CHARACTER, newCharacter)
 

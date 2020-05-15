@@ -34,8 +34,12 @@ class CharacterSheetActivity : AppCompatActivity() {
         //TODO: Data Binding
         val nameTV = findViewById<TextView>(R.id.tv_character_name)
         val levelTV = findViewById<TextView>(R.id.tv_character_level)
+        val raceTV = findViewById<TextView>(R.id.tv_character_race)
+        val classTV = findViewById<TextView>(R.id.tv_character_class)
         nameTV.text = character.Name
         levelTV.text = character.Level.toString()
+        raceTV.text = character.Race
+        classTV.text = character.Class
     }
 
     ///region Action Menu

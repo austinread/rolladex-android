@@ -19,4 +19,16 @@
         android:layout_height="wrap_content"
         tools:text="Level 10"/>
 
+    <TextView
+        android:id="@+id/tv_character_race"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Human"/>
+
+    <TextView
+        android:id="@+id/tv_character_class"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Barbarian"/>
+
 </LinearLayout>

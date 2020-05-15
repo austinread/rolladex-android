@@ -22,6 +22,24 @@
         android:textSize="22sp"
         android:importantForAutofill="no" />
 
+    <EditText
+        android:id="@+id/et_characterRace"
+        android:inputType="text"
+        android:hint="@string/race"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/et_characterClass"
+        android:inputType="text"
+        android:hint="@string/character_class"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:importantForAutofill="no" />
+
     <Button
         android:id="@+id/button_saveCharacter"
         android:layout_width="match_parent"

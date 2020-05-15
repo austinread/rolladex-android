@@ -13,5 +13,7 @@ import java.lang.reflect.Constructor
 data class CharacterSheet(
     @PrimaryKey(autoGenerate = true) val id: Long?,
     @ColumnInfo(name = "name") val Name: String,
-    @ColumnInfo(name = "level") val Level: Int
+    @ColumnInfo(name = "level") val Level: Int,
+    @ColumnInfo(name = "race") val Race: String,
+    @ColumnInfo(name = "class") val Class: String
 ) : Parcelable
