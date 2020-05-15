@@ -33,7 +33,9 @@ class CharacterSheetActivity : AppCompatActivity() {
     private fun bindCharacterData(character: CharacterSheet){
         //TODO: Data Binding
         val nameTV = findViewById<TextView>(R.id.tv_character_name)
+        val levelTV = findViewById<TextView>(R.id.tv_character_level)
         nameTV.text = character.Name
+        levelTV.text = character.Level.toString()
     }
 
     ///region Action Menu

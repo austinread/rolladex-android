@@ -7,9 +7,20 @@
     <EditText
         android:id="@+id/et_characterName"
         android:inputType="text"
+        android:hint="@string/character_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="22sp" />
+        android:textSize="22sp"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/et_characterLevel"
+        android:inputType="number"
+        android:hint="@string/level"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:importantForAutofill="no" />
 
     <Button
         android:id="@+id/button_saveCharacter"

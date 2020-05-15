@@ -2,4 +2,6 @@
     <string name="app_name">RollaDex</string>
     <string name="save_character">Save</string>
     <string name="delete_character">Delete Character</string>
+    <string name="character_name">Character Name</string>
+    <string name="level">Level</string>
 </resources>

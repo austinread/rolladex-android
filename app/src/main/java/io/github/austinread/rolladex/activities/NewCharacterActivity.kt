@@ -16,6 +16,7 @@ class NewCharacterActivity : AppCompatActivity() {
         setContentView(R.layout.activity_new_character)
 
         val editCharacterName = findViewById<EditText>(R.id.et_characterName)
+        val editCharacterLevel = findViewById<EditText>(R.id.et_characterLevel)
         val saveButton = findViewById<Button>(R.id.button_saveCharacter)
 
         saveButton.setOnClickListener{
@@ -24,8 +25,13 @@ class NewCharacterActivity : AppCompatActivity() {
                 setResult(Activity.RESULT_CANCELED, replyIntent)
             } else{
                 val name = editCharacterName.text.toString()
+                val level = editCharacterLevel.text.toString().toInt()
 
-                replyIntent.putExtra(EXTRA_REPLY, name)
+                val newCharacter = CharacterSheet(null, name, level)
+                val bundle = Bundle()
+                bundle.putParcelable(EXTRA_CHARACTER, newCharacter)
+
+                replyIntent.putExtra(EXTRA_BUNDLE, bundle)
                 setResult(Activity.RESULT_OK, replyIntent)
             }
             finish()
@@ -33,6 +39,7 @@ class NewCharacterActivity : AppCompatActivity() {
     }
 
     companion object{
-        const val EXTRA_REPLY = "NEW_CHARACTER_REPLY"
+        const val EXTRA_BUNDLE = "NEW_CHARACTER_BUNDLE_REPLY"
+        const val EXTRA_CHARACTER = "NEW_CHARACTER_REPLY"
     }
 }

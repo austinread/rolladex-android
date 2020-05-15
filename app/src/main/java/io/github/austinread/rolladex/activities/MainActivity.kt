@@ -48,10 +48,8 @@ class MainActivity : AppCompatActivity(), CharacterAdapter.CharacterClickListene
         super.onActivityResult(requestCode, resultCode, data)
 
         if (requestCode == newCharacterIntentResultCode && resultCode == Activity.RESULT_OK){
-            data?.getStringExtra(NewCharacterActivity.EXTRA_REPLY)?.let {
-                val character = CharacterSheet(id = null, Name = it)
-
-                characterVM.add(character)
+            data?.getBundleExtra(NewCharacterActivity.EXTRA_BUNDLE)?.let {
+                characterVM.add(it.getParcelable<CharacterSheet>(NewCharacterActivity.EXTRA_CHARACTER) as CharacterSheet)
             }
         }
         //TODO: Error Handling
