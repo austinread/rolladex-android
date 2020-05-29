@@ -11,6 +11,28 @@
     <string name="character_class">Class</string>
     <string name="character_class_display">%1s %2s</string>
 
+    <string name="dragonborn">DragonBorn</string>
+    <string name="dwarf">Dwarf</string>
+    <string name="elf">Elf</string>
+    <string name="gnome">Gnome</string>
+    <string name="halfElf">Half-Elf</string>
+    <string name="halfOrc">Half-Orc</string>
+    <string name="halfling">Halfling</string>
+    <string name="human">Human</string>
+    <string name="tiefling">Tiefling</string>
+
+    <string-array name="races_array">
+        <item>@string/dragonborn</item>
+        <item>@string/dwarf</item>
+        <item>@string/elf</item>
+        <item>@string/gnome</item>
+        <item>@string/halfElf</item>
+        <item>@string/halfOrc</item>
+        <item>@string/halfling</item>
+        <item>@string/human</item>
+        <item>@string/tiefling</item>
+    </string-array>
+
     <string name="artificer">Artificer</string>
     <string name="barbarian">Barbarian</string>
     <string name="bard">Bard</string>
@@ -24,4 +46,21 @@
     <string name="sorcerer">Sorcerer</string>
     <string name="warlock">Warlock</string>
     <string name="wizard">Wizard</string>
+
+    <string-array name="classes_array">
+        <item>@string/artificer</item>
+        <item>@string/barbarian</item>
+        <item>@string/bard</item>
+        <item>@string/cleric</item>
+        <item>@string/druid</item>
+        <item>@string/fighter</item>
+        <item>@string/monk</item>
+        <item>@string/paladin</item>
+        <item>@string/ranger</item>
+        <item>@string/rogue</item>
+        <item>@string/sorcerer</item>
+        <item>@string/warlock</item>
+        <item>@string/wizard</item>
+    </string-array>
+
 </resources>

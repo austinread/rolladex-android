@@ -5,6 +5,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
+import android.widget.ArrayAdapter
+import android.widget.AutoCompleteTextView
 import android.widget.Button
 import android.widget.EditText
 import io.github.austinread.rolladex.R
@@ -15,11 +17,23 @@ class NewCharacterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_character)
 
+        val races = resources.getStringArray(R.array.races_array)
+        val raceArrayAdapter = ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, races)
+        val classes = resources.getStringArray(R.array.classes_array)
+        val classArrayAdapter = ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, classes)
+
         //TODO: View/Data Binding?
         val editCharacterName = findViewById<EditText>(R.id.et_characterName)
         val editCharacterLevel = findViewById<EditText>(R.id.et_characterLevel)
-        val editCharacterRace = findViewById<EditText>(R.id.et_characterRace)
-        val editCharacterClass = findViewById<EditText>(R.id.et_characterClass)
+
+        val autoCompleteCharacterRace = findViewById<AutoCompleteTextView>(R.id.actv_characterRace)
+        autoCompleteCharacterRace.threshold = 1
+        autoCompleteCharacterRace.setAdapter(raceArrayAdapter)
+
+        val autoCompleteCharacterClass = findViewById<AutoCompleteTextView>(R.id.actv_characterClass)
+        autoCompleteCharacterClass.threshold = 1
+        autoCompleteCharacterClass.setAdapter(classArrayAdapter)
+
         val saveButton = findViewById<Button>(R.id.button_saveCharacter)
 
         saveButton.setOnClickListener{
@@ -29,8 +43,8 @@ class NewCharacterActivity : AppCompatActivity() {
             } else{
                 val name = editCharacterName.text.toString()
                 val level = editCharacterLevel.text.toString().toInt()
-                val race = editCharacterRace.text.toString()
-                val characterClass = editCharacterClass.text.toString()
+                val race = autoCompleteCharacterRace.text.toString()
+                val characterClass = autoCompleteCharacterClass.text.toString()
 
                 val newCharacter = CharacterSheet(null, name, level, race, characterClass)
                 val bundle = Bundle()
