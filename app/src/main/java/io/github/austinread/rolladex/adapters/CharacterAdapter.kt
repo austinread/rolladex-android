@@ -34,49 +34,49 @@ class CharacterAdapter(private val characterClickListener: CharacterClickListene
         val character = characters[position]
         holder.name.text = character.Name
         holder.level.text = context.getString(R.string.level_display, character.Level.toString())
-        holder.raceClass.text = context.getString(R.string.character_class_display, character.Race, character.Class)
+        holder.raceClass.text = context.getString(R.string.character_class_display, character.Race, character.CharacterClass)
 
-        if(character.Class == context.getString(R.string.artificer)){
+        if(character.CharacterClass == context.getString(R.string.artificer)){
             holder.classIcon.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_class_artificer))
         }
-        if(character.Class == context.getString(R.string.barbarian)){
+        if(character.CharacterClass == context.getString(R.string.barbarian)){
             holder.classIcon.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_class_barbarian))
         }
-        if(character.Class == context.getString(R.string.bard)){
+        if(character.CharacterClass == context.getString(R.string.bard)){
             holder.classIcon.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_class_bard))
         }
-        if(character.Class == context.getString(R.string.cleric)){
+        if(character.CharacterClass == context.getString(R.string.cleric)){
             holder.classIcon.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_class_cleric))
         }
-        if(character.Class == context.getString(R.string.druid)){
+        if(character.CharacterClass == context.getString(R.string.druid)){
             holder.classIcon.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_class_druid))
         }
-        if(character.Class == context.getString(R.string.fighter)){
+        if(character.CharacterClass == context.getString(R.string.fighter)){
             holder.classIcon.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_class_fighter))
         }
-        if(character.Class == context.getString(R.string.monk)){
+        if(character.CharacterClass == context.getString(R.string.monk)){
             holder.classIcon.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_class_monk))
         }
-        if(character.Class == context.getString(R.string.paladin)){
+        if(character.CharacterClass == context.getString(R.string.paladin)){
             holder.classIcon.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_class_paladin))
         }
-        if(character.Class == context.getString(R.string.ranger)){
+        if(character.CharacterClass == context.getString(R.string.ranger)){
             holder.classIcon.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_class_ranger))
         }
-        if(character.Class == context.getString(R.string.rogue)){
+        if(character.CharacterClass == context.getString(R.string.rogue)){
             holder.classIcon.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_class_rogue))
         }
-        if(character.Class == context.getString(R.string.sorcerer)){
+        if(character.CharacterClass == context.getString(R.string.sorcerer)){
             holder.classIcon.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_class_sorcerer))
         }
-        if(character.Class == context.getString(R.string.warlock)){
+        if(character.CharacterClass == context.getString(R.string.warlock)){
             holder.classIcon.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_class_warlock))
         }
-        if(character.Class == context.getString(R.string.wizard)){
+        if(character.CharacterClass == context.getString(R.string.wizard)){
             holder.classIcon.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_class_wizard))
         }
 
-        holder.classIcon.contentDescription = character.Class
+        holder.classIcon.contentDescription = character.CharacterClass
 
         holder.bind(character.id, characterClickListener)
     }

@@ -6,11 +6,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.TextView
+import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import io.github.austinread.rolladex.R
-import io.github.austinread.rolladex.entities.CharacterSheet
+import io.github.austinread.rolladex.databinding.ActivityCharacterSheetBinding
 import io.github.austinread.rolladex.viewmodels.CharacterSheetViewModel
 import io.github.austinread.rolladex.viewmodels.CharacterSheetViewModelFactory
 
@@ -20,26 +20,15 @@ class CharacterSheetActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_character_sheet)
+
+        val binding: ActivityCharacterSheetBinding = DataBindingUtil.setContentView(this, R.layout.activity_character_sheet)
 
         val characterId = intent.getLongExtra(MainActivity.EXTRA_VIEW_CHARACTER_ID, -1)
 
         vmFactory = CharacterSheetViewModelFactory(applicationContext as Application, characterId)
         vm = ViewModelProvider(this, vmFactory).get(CharacterSheetViewModel::class.java)
 
-        vm.character.observe(this, Observer{ character -> bindCharacterData(character) })
-    }
-
-    private fun bindCharacterData(character: CharacterSheet){
-        //TODO: Data Binding
-        val nameTV = findViewById<TextView>(R.id.tv_character_name)
-        val levelTV = findViewById<TextView>(R.id.tv_character_level)
-        val raceTV = findViewById<TextView>(R.id.tv_character_race)
-        val classTV = findViewById<TextView>(R.id.tv_character_class)
-        nameTV.text = character.Name
-        levelTV.text = character.Level.toString()
-        raceTV.text = character.Race
-        classTV.text = character.Class
+        vm.character.observe(this, Observer{ character -> binding.cs = character})
     }
 
     ///region Action Menu

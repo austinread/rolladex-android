@@ -1,34 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<layout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".activities.CharacterSheetActivity">
+    xmlns:tools="http://schemas.android.com/tools" >
 
-    <TextView
-        android:id="@+id/tv_character_name"
+    <data>
+        <variable
+            name="cs"
+            type="io.github.austinread.rolladex.entities.CharacterSheet" />
+    </data>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:text="Brutus Toasterface"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".activities.CharacterSheetActivity">
 
-    <TextView
-        android:id="@+id/tv_character_level"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:text="Level 10"/>
+        <TextView
+            android:id="@+id/tv_character_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{cs.name}"
+            tools:text="Brutus Toasterface"/>
 
-    <TextView
-        android:id="@+id/tv_character_race"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:text="Human"/>
+        <TextView
+            android:id="@+id/tv_character_level"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(cs.level)}"
+            tools:text="Level 10"/>
 
-    <TextView
-        android:id="@+id/tv_character_class"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:text="Barbarian"/>
+        <TextView
+            android:id="@+id/tv_character_race"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{cs.race}"
+            tools:text="Human"/>
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/tv_character_class"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{cs.characterClass}"
+            tools:text="Barbarian"/>
+
+    </LinearLayout>
+</layout>

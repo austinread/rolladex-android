@@ -15,5 +15,5 @@ data class CharacterSheet(
     @ColumnInfo(name = "name") val Name: String,
     @ColumnInfo(name = "level") val Level: Int,
     @ColumnInfo(name = "race") val Race: String,
-    @ColumnInfo(name = "class") val Class: String
+    @ColumnInfo(name = "class") val CharacterClass: String
 ) : Parcelable

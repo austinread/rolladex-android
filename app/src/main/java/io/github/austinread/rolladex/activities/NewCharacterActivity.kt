@@ -30,9 +30,9 @@ class NewCharacterActivity : AppCompatActivity() {
                 val name = editCharacterName.text.toString()
                 val level = editCharacterLevel.text.toString().toInt()
                 val race = editCharacterRace.text.toString()
-                val cClass = editCharacterClass.text.toString()
+                val characterClass = editCharacterClass.text.toString()
 
-                val newCharacter = CharacterSheet(null, name, level, race, cClass)
+                val newCharacter = CharacterSheet(null, name, level, race, characterClass)
                 val bundle = Bundle()
                 bundle.putParcelable(EXTRA_CHARACTER, newCharacter)
 
