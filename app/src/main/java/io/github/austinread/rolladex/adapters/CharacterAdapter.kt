@@ -86,7 +86,6 @@ class CharacterAdapter(private val characterClickListener: CharacterClickListene
     }
 
     class CharacterViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-        //TODO: View/Data Binding?
         val name: TextView = itemView.findViewById(R.id.characterList_characterName)
         val level: TextView = itemView.findViewById(R.id.characterList_characterLevel)
         val raceClass: TextView = itemView.findViewById(R.id.characterList_characterRaceClass)

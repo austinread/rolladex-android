@@ -25,7 +25,7 @@ abstract class AppDatabase : RoomDatabase() {
                         AppDatabase::class.java,
                         "rolladex_database"
                     )
-                        .fallbackToDestructiveMigration()   //TODO: migration?
+                        .fallbackToDestructiveMigration()
                         .build()
                     INSTANCE = tempInstance
                 }

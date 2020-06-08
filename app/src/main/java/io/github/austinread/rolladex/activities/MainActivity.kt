@@ -52,7 +52,6 @@ class MainActivity : AppCompatActivity(), CharacterAdapter.CharacterClickListene
                 characterVM.add(it.getParcelable<CharacterSheet>(NewCharacterActivity.EXTRA_CHARACTER) as CharacterSheet)
             }
         }
-        //TODO: Error Handling
     }
 
     override fun onCharacterClicked(id: Long?) {

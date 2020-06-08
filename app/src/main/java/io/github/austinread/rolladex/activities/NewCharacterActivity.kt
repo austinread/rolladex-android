@@ -22,7 +22,6 @@ class NewCharacterActivity : AppCompatActivity() {
         val classes = resources.getStringArray(R.array.classes_array)
         val classArrayAdapter = ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, classes)
 
-        //TODO: View/Data Binding?
         val editCharacterName = findViewById<EditText>(R.id.et_characterName)
         val editCharacterLevel = findViewById<EditText>(R.id.et_characterLevel)
 
