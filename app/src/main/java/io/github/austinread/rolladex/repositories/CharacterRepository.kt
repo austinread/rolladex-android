@@ -15,6 +15,10 @@ class CharacterRepository(private val characterDao: CharacterDao) {
         return characterDao.getById(id)
     }
 
+    suspend fun update(character: CharacterSheet){
+        characterDao.update(character)
+    }
+
     suspend fun delete(id: Long) {
         characterDao.delete(id)
     }

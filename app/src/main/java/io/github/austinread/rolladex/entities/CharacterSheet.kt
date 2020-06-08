@@ -12,8 +12,8 @@ import java.lang.reflect.Constructor
 @Parcelize
 data class CharacterSheet(
     @PrimaryKey(autoGenerate = true) val id: Long?,
-    @ColumnInfo(name = "name") val Name: String,
-    @ColumnInfo(name = "level") val Level: Int,
-    @ColumnInfo(name = "race") val Race: String,
-    @ColumnInfo(name = "class") val CharacterClass: String
+    @ColumnInfo(name = "name") var Name: String,
+    @ColumnInfo(name = "level") var Level: Int,
+    @ColumnInfo(name = "race") var Race: String,
+    @ColumnInfo(name = "class") var CharacterClass: String
 ) : Parcelable

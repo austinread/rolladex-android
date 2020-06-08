@@ -46,6 +46,7 @@
     <string name="sorcerer">Sorcerer</string>
     <string name="warlock">Warlock</string>
     <string name="wizard">Wizard</string>
+    <string name="save_basic_info">Save Basic Info</string>
 
     <string-array name="classes_array">
         <item>@string/artificer</item>
