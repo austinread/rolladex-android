@@ -10,6 +10,7 @@ import android.widget.Button
 import android.widget.EditText
 import io.github.austinread.rolladex.R
 import io.github.austinread.rolladex.entities.CharacterSheet
+import io.github.austinread.rolladex.fragments.BasicInfoFragment
 
 class EditBasicInfoActivity : AppCompatActivity() {
 
@@ -35,8 +36,8 @@ class EditBasicInfoActivity : AppCompatActivity() {
         autoCompleteCharacterClass.threshold = 1
         autoCompleteCharacterClass.setAdapter(classArrayAdapter)
 
-        intent.getBundleExtra(CharacterSheetActivity.EXTRA_EDIT_CHARACTER_BUNDLE_BI)?.let {
-            cs = it.getParcelable<CharacterSheet>(CharacterSheetActivity.EXTRA_EDIT_CHARACTER_BI) as CharacterSheet
+        intent.getBundleExtra(BasicInfoFragment.EXTRA_EDIT_CHARACTER_BUNDLE_BI)?.let {
+            cs = it.getParcelable<CharacterSheet>(BasicInfoFragment.EXTRA_EDIT_CHARACTER_BI) as CharacterSheet
 
             editCharacterName.setText(cs.Name)
             editCharacterLevel.setText(cs.Level.toString())
