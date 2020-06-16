@@ -47,6 +47,12 @@
     <string name="warlock">Warlock</string>
     <string name="wizard">Wizard</string>
     <string name="save_basic_info">Save Basic Info</string>
+    <string name="strength">Strength</string>
+    <string name="dexterity">Dexterity</string>
+    <string name="constitution">Constitution</string>
+    <string name="intelligence">Intelligence</string>
+    <string name="wisdom">Wisdom</string>
+    <string name="charisma">Charisma</string>
 
     <string-array name="classes_array">
         <item>@string/artificer</item>

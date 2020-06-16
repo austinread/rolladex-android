@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import io.github.austinread.rolladex.daos.CharacterDao
 import io.github.austinread.rolladex.entities.CharacterSheet
 
-@Database(entities = [CharacterSheet::class], version = 4, exportSchema = false)
+@Database(entities = [CharacterSheet::class], version = 5, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun characterDao(): CharacterDao
 
