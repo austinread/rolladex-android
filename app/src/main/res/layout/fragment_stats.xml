@@ -16,6 +16,7 @@
         android:layout_height="match_parent">
 
         <LinearLayout
+            android:id="@+id/container_strength"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
@@ -36,7 +37,7 @@
                     android:id="@+id/tv_character_strength"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@{String.valueOf(cs.strength)}"
+                    android:text="@={BindingUtils.intToString(cs.strength)}"
                     tools:text="10" />
 
                 <TextView
@@ -48,6 +49,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/container_dex"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -62,7 +64,7 @@
                     android:id="@+id/tv_character_dex"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@{String.valueOf(cs.dexterity)}"
+                    android:text="@={BindingUtils.intToString(cs.dexterity)}"
                     tools:text="10" />
 
                 <TextView
@@ -74,6 +76,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/container_con"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -88,7 +91,7 @@
                     android:id="@+id/tv_character_con"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@{String.valueOf(cs.constitution)}"
+                    android:text="@={BindingUtils.intToString(cs.constitution)}"
                     tools:text="10" />
 
                 <TextView
@@ -100,6 +103,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/container_int"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -114,7 +118,7 @@
                     android:id="@+id/tv_character_int"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@{String.valueOf(cs.intelligence)}"
+                    android:text="@={BindingUtils.intToString(cs.intelligence)}"
                     tools:text="10" />
 
                 <TextView
@@ -126,6 +130,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/container_wis"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -140,7 +145,7 @@
                     android:id="@+id/tv_character_wis"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@{String.valueOf(cs.wisdom)}"
+                    android:text="@={BindingUtils.intToString(cs.wisdom)}"
                     tools:text="10" />
 
                 <TextView
@@ -152,6 +157,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/container_char"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -166,7 +172,7 @@
                     android:id="@+id/tv_character_char"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@{String.valueOf(cs.charisma)}"
+                    android:text="@={BindingUtils.intToString(cs.charisma)}"
                     tools:text="10" />
 
                 <TextView
