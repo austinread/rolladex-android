@@ -4,10 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ArrayAdapter
-import android.widget.AutoCompleteTextView
-import android.widget.Button
-import android.widget.EditText
+import android.widget.*
 import io.github.austinread.rolladex.R
 import io.github.austinread.rolladex.entities.CharacterSheet
 import io.github.austinread.rolladex.fragments.BasicInfoFragment
@@ -36,6 +33,17 @@ class EditBasicInfoActivity : AppCompatActivity() {
         autoCompleteCharacterClass.threshold = 1
         autoCompleteCharacterClass.setAdapter(classArrayAdapter)
 
+        val alignmentSpinner = findViewById<Spinner>(R.id.cs_spinner_alignment)
+        val alignmentAdapter = ArrayAdapter.createFromResource(this, R.array.alignment_array, android.R.layout.simple_spinner_item)
+            .also {
+                    adapter -> adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+                    alignmentSpinner.adapter = adapter
+            }
+
+        val editCharacterSubclass = findViewById<EditText>(R.id.cs_et_characterSubClass)
+        val editCharacterBackground = findViewById<EditText>(R.id.cs_et_characterBackground)
+        val editCharacterXP = findViewById<EditText>(R.id.cs_et_characterXP)
+
         intent.getBundleExtra(BasicInfoFragment.EXTRA_EDIT_CHARACTER_BUNDLE_BI)?.let {
             cs = it.getParcelable<CharacterSheet>(BasicInfoFragment.EXTRA_EDIT_CHARACTER_BI) as CharacterSheet
 
@@ -43,6 +51,10 @@ class EditBasicInfoActivity : AppCompatActivity() {
             editCharacterLevel.setText(cs.Level.toString())
             autoCompleteCharacterRace.setText(cs.Race)
             autoCompleteCharacterClass.setText(cs.CharacterClass)
+            editCharacterSubclass.setText(cs.SubClass)
+            editCharacterBackground.setText(cs.Background)
+            editCharacterXP.setText(cs.XP.toString())
+            alignmentSpinner.setSelection(alignmentAdapter.getPosition(cs.Alignment))
         }
 
         val saveButton = findViewById<Button>(R.id.cs_button_saveBasicInfo)
@@ -52,6 +64,10 @@ class EditBasicInfoActivity : AppCompatActivity() {
             cs.Level = editCharacterLevel.text.toString().toInt()
             cs.Race = autoCompleteCharacterRace.text.toString()
             cs.CharacterClass = autoCompleteCharacterClass.text.toString()
+            cs.SubClass = editCharacterSubclass.text.toString()
+            cs.Background = editCharacterBackground.text.toString()
+            cs.XP = editCharacterXP.text.toString().toInt()
+            cs.Alignment = alignmentSpinner.selectedItem.toString()
 
             val replyIntent = Intent()
 

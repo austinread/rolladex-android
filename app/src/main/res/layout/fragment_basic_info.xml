@@ -48,6 +48,34 @@
                 android:text="@{cs.characterClass}"
                 tools:text="Barbarian" />
 
+            <TextView
+                android:id="@+id/tv_character_subclass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{cs.subClass}"
+                tools:text="Big Ugly Motherfucker" />
+
+            <TextView
+                android:id="@+id/tv_character_background"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{cs.background}"
+                tools:text="Pirate" />
+
+            <TextView
+                android:id="@+id/tv_character_xp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{String.valueOf(cs.xP)}"
+                tools:text="10000" />
+
+            <TextView
+                android:id="@+id/tv_character_alignment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{cs.alignment}"
+                tools:text="Chaotic Evil" />
+
         </LinearLayout>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton

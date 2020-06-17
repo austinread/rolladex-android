@@ -38,6 +38,39 @@
         android:textSize="22sp"
         android:importantForAutofill="no"/>
 
+    <EditText
+        android:id="@+id/cs_et_characterSubClass"
+        android:inputType="text"
+        android:hint="@string/subclass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/cs_et_characterBackground"
+        android:inputType="text"
+        android:hint="@string/background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/cs_et_characterXP"
+        android:inputType="number"
+        android:hint="@string/xp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:importantForAutofill="no" />
+
+    <Spinner
+        android:id="@+id/cs_spinner_alignment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:spinnerMode="dropdown" />
+
     <Button
         android:id="@+id/cs_button_saveBasicInfo"
         android:layout_width="match_parent"

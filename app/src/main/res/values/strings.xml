@@ -132,7 +132,32 @@
         <item>@string/wizard</item>
     </string-array>
 
+    <string name="lawfulgood">Lawful Good</string>
+    <string name="neutralgood">Neutral Good</string>
+    <string name="chaoticgood">Chaotic Good</string>
+    <string name="lawfulneutral">Lawful Neutral</string>
+    <string name="trueneutral">True Neutral</string>
+    <string name="chaoticneutral">Chaotic Neutral</string>
+    <string name="lawfulevil">Lawful Evil</string>
+    <string name="neutralevil">Neutral Evil</string>
+    <string name="chaoticevil">Chaotic Evil</string>
+
+    <string-array name="alignment_array">
+        <item>@string/lawfulgood</item>
+        <item>@string/neutralgood</item>
+        <item>@string/chaoticgood</item>
+        <item>@string/lawfulneutral</item>
+        <item>@string/trueneutral</item>
+        <item>@string/chaoticneutral</item>
+        <item>@string/lawfulevil</item>
+        <item>@string/neutralevil</item>
+        <item>@string/chaoticevil</item>
+    </string-array>
+
     <string name="cancel">Cancel</string>
     <string name="update">Update</string>
+    <string name="subclass">SubClass</string>
+    <string name="xp">XP</string>
+    <string name="background">Background</string>
 
 </resources>

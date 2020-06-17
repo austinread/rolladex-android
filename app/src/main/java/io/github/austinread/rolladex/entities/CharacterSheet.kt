@@ -17,6 +17,11 @@ data class CharacterSheet(
     @ColumnInfo(name = "race") var Race: String,
     @ColumnInfo(name = "class") var CharacterClass: String,
 
+    @ColumnInfo(name = "subclass") var SubClass: String = "",
+    @ColumnInfo(name = "background") var Background: String = "",
+    @ColumnInfo(name = "alignment") var Alignment: String = "True Neutral",
+    @ColumnInfo(name = "xp") var XP: Int = 0,
+
     @ColumnInfo(name = "strength") var Strength: Int = 10,
     @ColumnInfo(name = "dexterity") var Dexterity: Int = 10,
     @ColumnInfo(name = "constitution") var Constitution: Int = 10,
