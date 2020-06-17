@@ -11,26 +11,88 @@
     <string name="character_class">Class</string>
     <string name="character_class_display">%1s %2s</string>
 
+    <string name="aarakocra">Aarakocra</string>
+    <string name="aasimar">Aasimar</string>
+    <string name="bugbear">Bugbear</string>
+    <string name="centaur">Centaur</string>
+    <string name="changeling">Changeling</string>
     <string name="dragonborn">DragonBorn</string>
     <string name="dwarf">Dwarf</string>
     <string name="elf">Elf</string>
+    <string name="firbolg">Firbolg</string>
+    <string name="genasi">Genasi</string>
+    <string name="gith">Gith</string>
+    <string name="goblin">Goblin</string>
+    <string name="goliath">Goliath</string>
     <string name="gnome">Gnome</string>
+    <string name="grung">Grung</string>
     <string name="halfElf">Half-Elf</string>
     <string name="halfOrc">Half-Orc</string>
     <string name="halfling">Halfling</string>
+    <string name="hobgoblin">Hobgoblin</string>
     <string name="human">Human</string>
+    <string name="kalashtar">Kalashtar</string>
+    <string name="kenku">Kenku</string>
+    <string name="kobold">Kobold</string>
+    <string name="leonin">Leonin</string>
+    <string name="lizardfolk">Lizardfolk</string>
+    <string name="locathah">Locathah</string>
+    <string name="loxodon">Loxodon</string>
+    <string name="minotaur">Minotaur</string>
+    <string name="orc">Orc</string>
+    <string name="satyr">Satyr</string>
+    <string name="shifter">Shifter</string>
+    <string name="simic">Simic Hybrid</string>
+    <string name="tabaxi">Tabaxi</string>
     <string name="tiefling">Tiefling</string>
+    <string name="triton">Triton</string>
+    <string name="tortle">Tortle</string>
+    <string name="vedalken">Vedalken</string>
+    <string name="verdan">Verdan</string>
+    <string name="warforged">Warforged</string>
+    <string name="yuanti">Yuan-Ti Pureblood</string>
 
     <string-array name="races_array">
+        <item>@string/aarakocra</item>
+        <item>@string/aasimar</item>
+        <item>@string/bugbear</item>
+        <item>@string/centaur</item>
+        <item>@string/changeling</item>
         <item>@string/dragonborn</item>
         <item>@string/dwarf</item>
         <item>@string/elf</item>
+        <item>@string/firbolg</item>
+        <item>@string/gith</item>
+        <item>@string/genasi</item>
+        <item>@string/goblin</item>
+        <item>@string/goliath</item>
         <item>@string/gnome</item>
+        <item>@string/grung</item>
         <item>@string/halfElf</item>
         <item>@string/halfOrc</item>
         <item>@string/halfling</item>
+        <item>@string/hobgoblin</item>
         <item>@string/human</item>
+        <item>@string/kalashtar</item>
+        <item>@string/kenku</item>
+        <item>@string/kobold</item>
+        <item>@string/leonin</item>
+        <item>@string/locathah</item>
+        <item>@string/lizardfolk</item>
+        <item>@string/loxodon</item>
+        <item>@string/minotaur</item>
+        <item>@string/orc</item>
+        <item>@string/satyr</item>
+        <item>@string/shifter</item>
+        <item>@string/simic</item>
+        <item>@string/tabaxi</item>
         <item>@string/tiefling</item>
+        <item>@string/triton</item>
+        <item>@string/tortle</item>
+        <item>@string/vedalken</item>
+        <item>@string/verdan</item>
+        <item>@string/warforged</item>
+        <item>@string/yuanti</item>
     </string-array>
 
     <string name="artificer">Artificer</string>
