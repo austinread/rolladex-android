@@ -11,18 +11,30 @@
         <import type="io.github.austinread.rolladex.utils.BindingUtils" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <LinearLayout
-            android:id="@+id/container_strength"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            tools:context=".activities.CharacterSheetActivity">
+        <CheckBox
+            android:id="@+id/cb_character_inspiration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/inspiration"
+            android:checked="@={cs.inspiration}" />
+
+        <EditText
+            android:id="@+id/et_character_proficiency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:text="@={BindingUtils.intToString(cs.proficiency)}"
+            android:importantForAutofill="no"
+            android:hint="@string/single_character_filler"
+            tools:text="2" />
 
             <LinearLayout
+                android:id="@+id/container_strength"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -183,7 +195,5 @@
                     tools:text="+0" />
             </LinearLayout>
 
-        </LinearLayout>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 </layout>

@@ -24,7 +24,7 @@ class BindingUtils {
 
         @JvmStatic
         fun stringToInt(value: String) : Int{
-            return Integer.parseInt(value)
+            return (if (value.isEmpty()) 0 else Integer.parseInt(value))
         }
     }
 }

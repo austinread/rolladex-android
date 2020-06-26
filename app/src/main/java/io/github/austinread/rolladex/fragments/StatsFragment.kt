@@ -1,10 +1,14 @@
 package io.github.austinread.rolladex.fragments
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CheckBox
+import android.widget.EditText
 import android.widget.LinearLayout
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -34,6 +38,20 @@ class StatsFragment : Fragment(), AbilityScoreDialog.AbilityScoreDialogListener 
         vm = ViewModelProvider(this, vmFactory).get(CharacterSheetViewModel::class.java)
 
         vm.character.observe(viewLifecycleOwner, Observer{ character -> binding.cs = character})
+
+        view.findViewById<EditText>(R.id.et_character_proficiency).addTextChangedListener(object: TextWatcher{
+            override fun afterTextChanged(s: Editable?) {
+                if (vm.character.value != null){
+                    saveUpdates()
+                }
+            }
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+        })
+
+        view.findViewById<CheckBox>(R.id.cb_character_inspiration).setOnClickListener(){
+            saveUpdates()
+        }
 
         view.findViewById<LinearLayout>(R.id.container_strength).setOnClickListener {
             showAbilityScoreDialog(getString(R.string.strength), binding.cs!!.Strength)
@@ -79,10 +97,14 @@ class StatsFragment : Fragment(), AbilityScoreDialog.AbilityScoreDialogListener 
             getString(R.string.charisma) -> binding.cs!!.Charisma = newScore
         }
 
-        vm.update(vm.character.value!!) //lol nullchecking is for nerds
+        saveUpdates()
     }
 
     ///endregion
+
+    private fun saveUpdates(){
+        vm.update(vm.character.value!!) //lol nullchecking is for nerds
+    }
 
     companion object{
         const val ARG_ABILITY_NAME = "ABILITY_NAME"

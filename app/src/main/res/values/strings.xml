@@ -159,5 +159,7 @@
     <string name="subclass">SubClass</string>
     <string name="xp">XP</string>
     <string name="background">Background</string>
+    <string name="inspiration">Inspiration</string>
+    <string name="single_character_filler">0</string>
 
 </resources>
