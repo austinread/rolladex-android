@@ -1,7 +1,6 @@
 package io.github.austinread.rolladex.utils
 
 import androidx.databinding.InverseMethod
-import java.lang.Math.abs
 
 class BindingUtils {
     companion object{
@@ -9,11 +8,27 @@ class BindingUtils {
             return score/2 - 5
         }
 
+        private fun getSkillWithProficiency(abilityScore: Int, proficient: Boolean, proficiency: Int) :Int{
+            return getAbilityModifier(abilityScore) + (if (proficient) proficiency else 0)
+        }
+
         @JvmStatic
         fun getAbilityModifierString(score: Int) :String{
             val modifier = getAbilityModifier(score)
 
             return (if (modifier < 0) "$modifier" else "+$modifier")
+        }
+
+        @JvmStatic
+        fun getSkillWithProficiencyStr(abilityScore: Int, proficient: Boolean, proficiency: Int) :String{
+            val modifier = getSkillWithProficiency(abilityScore, proficient, proficiency)
+            return modifier.toString()
+        }
+
+        @JvmStatic
+        fun getPassiveStr(abilityScore: Int, proficient: Boolean, proficiency: Int) :String{
+            val modifier = 10 + getSkillWithProficiency(abilityScore, proficient, proficiency)
+            return modifier.toString()
         }
 
         @JvmStatic

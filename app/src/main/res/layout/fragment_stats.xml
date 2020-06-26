@@ -11,27 +11,31 @@
         <import type="io.github.austinread.rolladex.utils.BindingUtils" />
     </data>
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <CheckBox
-            android:id="@+id/cb_character_inspiration"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/inspiration"
-            android:checked="@={cs.inspiration}" />
+            android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/et_character_proficiency"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:text="@={BindingUtils.intToString(cs.proficiency)}"
-            android:importantForAutofill="no"
-            android:hint="@string/single_character_filler"
-            tools:text="2" />
+            <CheckBox
+                android:id="@+id/cb_character_inspiration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="@={cs.inspiration}"
+                android:text="@string/inspiration" />
+
+            <EditText
+                android:id="@+id/et_character_proficiency"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/single_character_filler"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:text="@={BindingUtils.intToString(cs.proficiency)}"
+                tools:text="2" />
 
             <LinearLayout
                 android:id="@+id/container_strength"
@@ -195,5 +199,493 @@
                     tools:text="+0" />
             </LinearLayout>
 
-    </LinearLayout>
+            <LinearLayout
+                android:id="@+id/container_saving_str"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <CheckBox
+                    android:id="@+id/cb_saving_str"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="@={cs.proficientSavingStr}"
+                    android:text="@string/strength" />
+
+                <TextView
+                    android:id="@+id/tv_saving_str"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{BindingUtils.getSkillWithProficiencyStr(cs.strength, cs.proficientSavingStr, cs.proficiency)}"
+                    tools:text="0" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/container_saving_dex"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <CheckBox
+                    android:id="@+id/cb_saving_dex"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="@={cs.proficientSavingDex}"
+                    android:text="@string/dexterity" />
+
+                <TextView
+                    android:id="@+id/tv_saving_dex"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{BindingUtils.getSkillWithProficiencyStr(cs.dexterity, cs.proficientSavingDex, cs.proficiency)}"
+                    tools:text="0" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/container_saving_con"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <CheckBox
+                    android:id="@+id/cb_saving_con"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="@={cs.proficientSavingCon}"
+                    android:text="@string/constitution" />
+
+                <TextView
+                    android:id="@+id/tv_saving_con"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{BindingUtils.getSkillWithProficiencyStr(cs.constitution, cs.proficientSavingCon, cs.proficiency)}"
+                    tools:text="0" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/container_saving_int"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <CheckBox
+                    android:id="@+id/cb_saving_int"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="@={cs.proficientSavingInt}"
+                    android:text="@string/intelligence" />
+
+                <TextView
+                    android:id="@+id/tv_saving_int"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{BindingUtils.getSkillWithProficiencyStr(cs.intelligence, cs.proficientSavingInt, cs.proficiency)}"
+                    tools:text="0" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/container_saving_wis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <CheckBox
+                    android:id="@+id/cb_saving_wis"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="@={cs.proficientSavingWis}"
+                    android:text="@string/wisdom" />
+
+                <TextView
+                    android:id="@+id/tv_saving_wis"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{BindingUtils.getSkillWithProficiencyStr(cs.wisdom, cs.proficientSavingWis, cs.proficiency)}"
+                    tools:text="0" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/container_saving_char"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <CheckBox
+                    android:id="@+id/cb_saving_char"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="@={cs.proficientSavingChar}"
+                    android:text="@string/charisma" />
+
+                <TextView
+                    android:id="@+id/tv_saving_char"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{BindingUtils.getSkillWithProficiencyStr(cs.charisma, cs.proficientSavingChar, cs.proficiency)}"
+                    tools:text="0" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/container_acrobatics"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <CheckBox
+                    android:id="@+id/cb_acrobatics"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="@={cs.proficientAcrobatics}"
+                    android:text="@string/Acrobatics" />
+
+                <TextView
+                    android:id="@+id/tv_acrobatics"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{BindingUtils.getSkillWithProficiencyStr(cs.dexterity, cs.proficientAcrobatics, cs.proficiency)}"
+                    tools:text="0" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/container_animalHandling"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <CheckBox
+                    android:id="@+id/cb_animalHandling"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="@={cs.proficientAnimalHandling}"
+                    android:text="@string/AnimalHandling" />
+
+                <TextView
+                    android:id="@+id/tv_animalHandling"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{BindingUtils.getSkillWithProficiencyStr(cs.wisdom, cs.proficientAnimalHandling, cs.proficiency)}"
+                    tools:text="0" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/container_arcana"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <CheckBox
+                    android:id="@+id/cb_arcana"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="@={cs.proficientArcana}"
+                    android:text="@string/Arcana" />
+
+                <TextView
+                    android:id="@+id/tv_arcana"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{BindingUtils.getSkillWithProficiencyStr(cs.intelligence, cs.proficientArcana, cs.proficiency)}"
+                    tools:text="0" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/container_athletics"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <CheckBox
+                    android:id="@+id/cb_athletics"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="@={cs.proficientAthletics}"
+                    android:text="@string/Athletics" />
+
+                <TextView
+                    android:id="@+id/tv_athletics"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{BindingUtils.getSkillWithProficiencyStr(cs.strength, cs.proficientAthletics, cs.proficiency)}"
+                    tools:text="0" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/container_deception"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <CheckBox
+                    android:id="@+id/cb_deception"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="@={cs.proficientDeception}"
+                    android:text="@string/Deception" />
+
+                <TextView
+                    android:id="@+id/tv_deception"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{BindingUtils.getSkillWithProficiencyStr(cs.charisma, cs.proficientDeception, cs.proficiency)}"
+                    tools:text="0" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/container_history"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <CheckBox
+                    android:id="@+id/cb_history"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="@={cs.proficientHistory}"
+                    android:text="@string/History" />
+
+                <TextView
+                    android:id="@+id/tv_history"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{BindingUtils.getSkillWithProficiencyStr(cs.intelligence, cs.proficientHistory, cs.proficiency)}"
+                    tools:text="0" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/container_insight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <CheckBox
+                    android:id="@+id/cb_insight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="@={cs.proficientInsight}"
+                    android:text="@string/Insight" />
+
+                <TextView
+                    android:id="@+id/tv_insight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{BindingUtils.getSkillWithProficiencyStr(cs.wisdom, cs.proficientInsight, cs.proficiency)}"
+                    tools:text="0" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/container_intimidation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <CheckBox
+                    android:id="@+id/cb_intimidation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="@={cs.proficientIntimidation}"
+                    android:text="@string/Intimidation" />
+
+                <TextView
+                    android:id="@+id/tv_intimidation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{BindingUtils.getSkillWithProficiencyStr(cs.charisma, cs.proficientIntimidation, cs.proficiency)}"
+                    tools:text="0" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/container_investigation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <CheckBox
+                    android:id="@+id/cb_investigation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="@={cs.proficientInvestigation}"
+                    android:text="@string/Investigation" />
+
+                <TextView
+                    android:id="@+id/tv_investigation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{BindingUtils.getSkillWithProficiencyStr(cs.intelligence, cs.proficientInvestigation, cs.proficiency)}"
+                    tools:text="0" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/container_medicine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <CheckBox
+                    android:id="@+id/cb_medicine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="@={cs.proficientMedicine}"
+                    android:text="@string/Medicine" />
+
+                <TextView
+                    android:id="@+id/tv_medicine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{BindingUtils.getSkillWithProficiencyStr(cs.wisdom, cs.proficientMedicine, cs.proficiency)}"
+                    tools:text="0" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/container_nature"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <CheckBox
+                    android:id="@+id/cb_nature"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="@={cs.proficientNature}"
+                    android:text="@string/Nature" />
+
+                <TextView
+                    android:id="@+id/tv_nature"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{BindingUtils.getSkillWithProficiencyStr(cs.intelligence, cs.proficientNature, cs.proficiency)}"
+                    tools:text="0" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/container_perception"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <CheckBox
+                    android:id="@+id/cb_perception"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="@={cs.proficientPerception}"
+                    android:text="@string/Perception" />
+
+                <TextView
+                    android:id="@+id/tv_perception"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{BindingUtils.getSkillWithProficiencyStr(cs.wisdom, cs.proficientPerception, cs.proficiency)}"
+                    tools:text="0" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/container_performance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <CheckBox
+                    android:id="@+id/cb_performance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="@={cs.proficientPerformance}"
+                    android:text="@string/Performance" />
+
+                <TextView
+                    android:id="@+id/tv_performance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{BindingUtils.getSkillWithProficiencyStr(cs.charisma, cs.proficientPerformance, cs.proficiency)}"
+                    tools:text="0" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/container_persuasion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <CheckBox
+                    android:id="@+id/cb_persuasion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="@={cs.proficientPersuasion}"
+                    android:text="@string/Persuasion" />
+
+                <TextView
+                    android:id="@+id/tv_persuasion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{BindingUtils.getSkillWithProficiencyStr(cs.charisma, cs.proficientPersuasion, cs.proficiency)}"
+                    tools:text="0" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/container_religion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <CheckBox
+                    android:id="@+id/cb_religion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="@={cs.proficientReligion}"
+                    android:text="@string/Religion" />
+
+                <TextView
+                    android:id="@+id/tv_religion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{BindingUtils.getSkillWithProficiencyStr(cs.intelligence, cs.proficientReligion, cs.proficiency)}"
+                    tools:text="0" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/container_slightOfHand"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <CheckBox
+                    android:id="@+id/cb_slightOfHand"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="@={cs.proficientSlightOfHand}"
+                    android:text="@string/SlightOfHand" />
+
+                <TextView
+                    android:id="@+id/tv_slightOfHand"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{BindingUtils.getSkillWithProficiencyStr(cs.dexterity, cs.proficientSlightOfHand, cs.proficiency)}"
+                    tools:text="0" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/container_stealth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <CheckBox
+                    android:id="@+id/cb_stealth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="@={cs.proficientStealth}"
+                    android:text="@string/Stealth" />
+
+                <TextView
+                    android:id="@+id/tv_stealth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{BindingUtils.getSkillWithProficiencyStr(cs.dexterity, cs.proficientStealth, cs.proficiency)}"
+                    tools:text="0" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/container_survival"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <CheckBox
+                    android:id="@+id/cb_survival"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="@={cs.proficientSurvival}"
+                    android:text="@string/Survival" />
+
+                <TextView
+                    android:id="@+id/tv_survival"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{BindingUtils.getSkillWithProficiencyStr(cs.wisdom, cs.proficientSurvival, cs.proficiency)}"
+                    tools:text="0" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_passive_perception"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{BindingUtils.getPassiveStr(cs.wisdom, cs.proficientPerception, cs.proficiency)}"
+                tools:text="0" />
+
+        </LinearLayout>
+    </ScrollView>
 </layout>
