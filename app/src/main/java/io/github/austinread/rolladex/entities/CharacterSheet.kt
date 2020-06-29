@@ -55,7 +55,10 @@ data class CharacterSheet(
     @ColumnInfo(name = "proficientReligion") var ProficientReligion: Boolean = false,
     @ColumnInfo(name = "proficientSlightOfHand") var ProficientSlightOfHand: Boolean = false,
     @ColumnInfo(name = "proficientStealth") var ProficientStealth: Boolean = false,
-    @ColumnInfo(name = "proficientSurvival") var ProficientSurvival: Boolean = false
+    @ColumnInfo(name = "proficientSurvival") var ProficientSurvival: Boolean = false,
+
+    @ColumnInfo(name = "armorClass") var ArmorClass: Int = 0,
+    @ColumnInfo(name = "speed") var Speed: Int = 0
 
 
 ) : Parcelable

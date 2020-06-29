@@ -15,11 +15,12 @@ import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import io.github.austinread.rolladex.R
 import io.github.austinread.rolladex.fragments.BasicInfoFragment
+import io.github.austinread.rolladex.fragments.CombatFragment
 import io.github.austinread.rolladex.fragments.StatsFragment
 import io.github.austinread.rolladex.viewmodels.CharacterSheetViewModel
 import io.github.austinread.rolladex.viewmodels.CharacterSheetViewModelFactory
 
-private const val NUM_CS_TABS = 2
+private const val NUM_CS_TABS = 3
 
 class CharacterSheetActivity : AppCompatActivity() {
     private lateinit var vmFactory: CharacterSheetViewModelFactory
@@ -42,6 +43,7 @@ class CharacterSheetActivity : AppCompatActivity() {
             tab.text = when(position){
                 0 -> "Basics"
                 1 -> "Stats"
+                2 -> "Combat"
                 else -> ""
             }
             viewPager.setCurrentItem(tab.position, true)
@@ -86,6 +88,7 @@ class CharacterSheetFragmentAdapter(activity: FragmentActivity) : FragmentStateA
         val fragment = when(position){
             0 -> BasicInfoFragment()
             1 -> StatsFragment()
+            2 -> CombatFragment()
             else -> BasicInfoFragment() //Should probably be an error or something
         }
 
