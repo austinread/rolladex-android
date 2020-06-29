@@ -61,7 +61,7 @@ class CharacterSheetActivity : AppCompatActivity() {
                 vm.character.removeObservers(this)
 
                 val intent = Intent(this@CharacterSheetActivity, MainActivity::class.java)
-                intent.putExtra(EXTRA_DELETE_CHARACTER_ID, vm.character.value?.id)
+                intent.putExtra(EXTRA_DELETE_CHARACTER_ID, characterId)
                 startActivity(intent)
                 true
             }
