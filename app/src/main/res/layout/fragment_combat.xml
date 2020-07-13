@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
@@ -11,38 +12,96 @@
         <import type="io.github.austinread.rolladex.utils.BindingUtils" />
     </data>
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/et_character_armor"
+        <LinearLayout
+            android:id="@+id/character_armor_container"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="@string/single_character_filler"
-            android:importantForAutofill="no"
-            android:inputType="number"
-            android:text="@={BindingUtils.intToString(cs.armorClass)}"
-            tools:text="16" />
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.15"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/tv_character_initiative"
+            <EditText
+                android:id="@+id/et_character_armor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="@string/single_character_filler"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:text="@={BindingUtils.intToString(cs.armorClass)}"
+                android:textSize="50sp"
+                tools:text="16" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/armor_class" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/character_initiative_container"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{BindingUtils.getAbilityModifierString(cs.dexterity)}"
-            tools:text="3" />
+            android:orientation="vertical"
+            app:layout_constraintEnd_toStartOf="@+id/character_speed_container"
+            app:layout_constraintStart_toEndOf="@+id/character_armor_container"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <EditText
-            android:id="@+id/et_character_speed"
+            <TextView
+                android:id="@+id/tv_character_initiative"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@{BindingUtils.getAbilityModifierString(cs.dexterity)}"
+                android:textColor="#000"
+                android:textSize="50sp"
+                tools:text="+3" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/initiative" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/character_speed_container"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="@string/single_character_filler"
-            android:importantForAutofill="no"
-            android:inputType="number"
-            android:text="@={BindingUtils.intToString(cs.speed)}"
-            tools:text="16" />
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.85"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-    </LinearLayout>
+            <EditText
+                android:id="@+id/et_character_speed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="@string/single_character_filler"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:text="@={BindingUtils.intToString(cs.speed)}"
+                android:textSize="50sp"
+                tools:text="35" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/speed" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>
