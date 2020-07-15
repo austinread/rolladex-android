@@ -164,6 +164,9 @@
     <string name="armor_class">Armor Class</string>
     <string name="speed">Speed</string>
     <string name="initiative">Initiative</string>
+    <string name="proficiency">Proficiency</string>
+    <string name="saving_throws">Saving Throws</string>
+    <string name="skills">Skills</string>
     <string name="single_character_filler">0</string>
 
     <string name="Acrobatics">Acrobatics</string>
