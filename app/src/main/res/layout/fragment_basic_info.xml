@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -21,72 +21,124 @@
             tools:context=".activities.CharacterSheetActivity">
 
             <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/name"
+                android:textSize="12sp" />
+
+            <TextView
                 android:id="@+id/tv_character_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10sp"
+                android:layout_marginLeft="10sp"
+                android:layout_marginEnd="0sp"
+                android:layout_marginRight="0sp"
                 android:text="@{cs.name}"
+                android:textSize="20sp"
                 tools:text="Brutus Toasterface" />
 
             <TextView
-                android:id="@+id/tv_character_level"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@{String.valueOf(cs.level)}"
-                tools:text="Level 10" />
+                android:text="@string/race"
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/tv_character_race"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10sp"
+                android:layout_marginLeft="10sp"
+                android:layout_marginEnd="0sp"
+                android:layout_marginRight="0sp"
                 android:text="@{cs.race}"
-                tools:text="Human" />
+                android:textSize="20sp"
+                tools:text="Canadian Human" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/character_class"
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/tv_character_class"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@{cs.characterClass}"
-                tools:text="Barbarian" />
+                android:layout_marginStart="10sp"
+                android:layout_marginLeft="10sp"
+                android:layout_marginEnd="0sp"
+                android:layout_marginRight="0sp"
+                android:text="@{`Level ` + String.valueOf(cs.level) + ` ` + cs.subClass + ` ` + cs.characterClass}"
+                android:textSize="20sp"
+                tools:text="Level 10 Angry Barbarian" />
 
             <TextView
-                android:id="@+id/tv_character_subclass"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@{cs.subClass}"
-                tools:text="Big Ugly Motherfucker" />
+                android:text="@string/background"
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/tv_character_background"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10sp"
+                android:layout_marginLeft="10sp"
+                android:layout_marginEnd="0sp"
+                android:layout_marginRight="0sp"
                 android:text="@{cs.background}"
+                android:textSize="20sp"
                 tools:text="Pirate" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/xp"
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/tv_character_xp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10sp"
+                android:layout_marginLeft="10sp"
+                android:layout_marginEnd="0sp"
+                android:layout_marginRight="0sp"
                 android:text="@{String.valueOf(cs.xP)}"
+                android:textSize="20sp"
                 tools:text="10000" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/alignment"
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/tv_character_alignment"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10sp"
+                android:layout_marginLeft="10sp"
+                android:layout_marginEnd="0sp"
+                android:layout_marginRight="0sp"
                 android:text="@{cs.alignment}"
+                android:textSize="20sp"
                 tools:text="Chaotic Evil" />
 
         </LinearLayout>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_margin="16dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="16dp"
             android:src="@drawable/ic_edit_light"
-            app:rippleColor="@color/colorPrimary"/>
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:rippleColor="@color/colorPrimary" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

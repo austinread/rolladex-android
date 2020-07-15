@@ -5,6 +5,8 @@
     <string name="delete_character">Delete Character</string>
 
     <string name="character_name">Character Name</string>
+    <string name="name">Name</string>
+    <string name="alignment">Alignment</string>
     <string name="level">Level</string>
     <string name="level_display">Level %1$s</string>
     <string name="race">Race</string>
